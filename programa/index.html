@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Програма практик — Вік Королеви</title>
+<meta name="description" content="Річна програма онлайн-клубу кундаліні йоги «Вік Королеви»: 12 місяців — 12 реальних запитів жінок 40+, практики й лекції кожного місяця.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --plum:#3A0E1C;
+  --cream:#F7E8D4;
+  --amber:#C9915B;
+  --rose:#8C5E6B;
+  --violet-grey:#4A2532;
+  --gold:#E8B04B;
+  --fb:'Inter', sans-serif;
+  --ease: cubic-bezier(.22,.61,.36,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);background:var(--cream);color:var(--plum);font-size:16px;line-height:1.6;-webkit-text-size-adjust:100%}
+a{color:inherit}
+
+.topbar{
+  background:var(--plum);
+  padding:18px 24px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:12px;
+  position:sticky;
+  top:0;
+  z-index:50;
+  box-shadow:0 6px 20px -12px rgba(0,0,0,.6);
+}
+.topbar .brand{font-weight:700;font-size:17px;color:var(--cream);text-decoration:none}
+.topbar .back{
+  font-size:14px;font-weight:500;color:var(--amber);text-decoration:none;
+  display:inline-flex;align-items:center;gap:6px;
+  transition:color 200ms ease;padding:6px 2px;
+}
+.topbar .back:hover{color:var(--gold)}
+.topbar .back:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+/* ===== HEADER ===== */
+.page-head{
+  background:linear-gradient(160deg, var(--plum) 0%, var(--violet-grey) 100%);
+  color:var(--cream);
+  padding:64px 24px 56px;
+  text-align:center;
+}
+.page-head .eyebrow{
+  font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--amber);display:block;margin-bottom:14px;
+}
+.page-head h1{font-size:clamp(30px,5.4vw,46px);font-weight:700;line-height:1.15;margin-bottom:18px}
+.page-head p{
+  max-width:620px;margin:0 auto;
+  font-size:17px;line-height:1.7;color:rgba(247,232,212,.85);
+}
+
+main{max-width:860px;margin:0 auto;padding:56px 24px 80px}
+
+h2.block-title{
+  font-size:clamp(24px,3.4vw,32px);
+  font-weight:700;
+  margin-bottom:10px;
+  line-height:1.25;
+}
+.block-lead{
+  font-size:16.5px;
+  line-height:1.75;
+  color:var(--violet-grey);
+  margin-bottom:30px;
+  max-width:680px;
+}
+
+/* ===== HOW IT WORKS ===== */
+.principles{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:18px;
+  margin-bottom:20px;
+}
+.principle{
+  background:#fff;
+  border:1px solid rgba(58,14,28,.09);
+  border-radius:16px;
+  padding:24px 22px;
+}
+.principle .num{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:30px;height:30px;border-radius:50%;
+  background:var(--amber);color:var(--plum);
+  font-weight:700;font-size:14px;margin-bottom:12px;
+}
+.principle h3{font-size:17px;font-weight:700;margin-bottom:6px;line-height:1.35}
+.principle p{font-size:15px;color:var(--violet-grey);line-height:1.65}
+
+.rule{
+  height:1px;
+  background:linear-gradient(90deg, transparent, rgba(201,145,91,.5), transparent);
+  margin:56px 0;
+}
+
+/* ===== MONTHS ===== */
+.month{
+  background:#fff;
+  border:1px solid rgba(58,14,28,.09);
+  border-radius:20px;
+  padding:32px 30px;
+  margin-bottom:22px;
+  box-shadow:0 18px 40px -30px rgba(58,14,28,.3);
+}
+.month-label{
+  font-size:12.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--amber);display:block;margin-bottom:10px;
+}
+.month-quote{
+  font-size:clamp(19px,2.6vw,23px);
+  font-weight:700;
+  line-height:1.35;
+  color:var(--plum);
+  margin-bottom:10px;
+}
+.month-desc{
+  font-size:15.5px;color:var(--violet-grey);line-height:1.7;
+  padding-bottom:22px;margin-bottom:22px;
+  border-bottom:1px solid rgba(58,14,28,.1);
+}
+.sub-label{
+  font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--rose);display:block;margin-bottom:12px;
+}
+.practice-list{list-style:none;display:grid;gap:9px;margin-bottom:24px;counter-reset:pr}
+.practice-list li{
+  position:relative;padding-left:34px;
+  font-size:15.5px;line-height:1.6;color:var(--violet-grey);
+}
+.practice-list li::before{
+  counter-increment:pr;content:counter(pr);
+  position:absolute;left:0;top:1px;
+  width:22px;height:22px;border-radius:50%;
+  background:rgba(201,145,91,.16);color:var(--plum);
+  display:flex;align-items:center;justify-content:center;
+  font-size:12px;font-weight:700;
+}
+.lecture-list{list-style:none;display:grid;gap:10px}
+.lecture-list li{
+  font-size:15.5px;line-height:1.6;color:var(--violet-grey);
+  padding-left:16px;border-left:2px solid rgba(201,145,91,.45);
+}
+.expert-tag{
+  display:inline-block;
+  background:rgba(140,94,107,.14);
+  color:var(--rose);
+  font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  padding:3px 9px;border-radius:999px;
+  margin-right:6px;white-space:nowrap;
+}
+.complex-note{
+  margin-top:22px;
+  background:rgba(247,232,212,.6);
+  border-radius:12px;
+  padding:14px 18px;
+  font-size:14.5px;
+  line-height:1.65;
+  color:var(--violet-grey);
+}
+.complex-note strong{color:var(--plum)}
+
+/* ===== THREADS ===== */
+.threads{
+  background:var(--plum);
+  color:var(--cream);
+  border-radius:20px;
+  padding:36px 32px;
+}
+.threads h2{font-size:clamp(23px,3.2vw,30px);font-weight:700;margin-bottom:8px;color:var(--cream)}
+.threads .threads-sub{color:var(--amber);font-size:15px;font-weight:600;margin-bottom:8px}
+.threads .threads-lead{color:rgba(247,232,212,.82);font-size:15.5px;line-height:1.7;margin-bottom:24px}
+.threads ol{list-style:none;display:grid;gap:12px;counter-reset:th}
+.threads li{
+  position:relative;padding-left:36px;
+  font-size:15.5px;line-height:1.65;color:rgba(247,232,212,.9);
+}
+.threads li::before{
+  counter-increment:th;content:counter(th);
+  position:absolute;left:0;top:0;
+  width:24px;height:24px;border-radius:50%;
+  background:rgba(232,176,75,.22);color:var(--gold);
+  display:flex;align-items:center;justify-content:center;
+  font-size:12.5px;font-weight:700;
+}
+.threads li strong{color:var(--cream)}
+
+/* ===== CTA ===== */
+.page-cta{text-align:center;margin-top:56px}
+.page-cta p{font-size:17px;color:var(--violet-grey);margin-bottom:22px}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:16px 34px;min-height:52px;border-radius:999px;
+  font-weight:600;font-size:15.5px;text-decoration:none;
+  background:linear-gradient(90deg, var(--amber), var(--gold), var(--rose), var(--amber));
+  background-size:300% 100%;
+  color:var(--plum);
+  animation:btnFlow 7s ease-in-out infinite;
+  transition:box-shadow 220ms var(--ease);
+}
+@keyframes btnFlow{
+  0%{background-position:0% 0%}
+  50%{background-position:100% 0%}
+  100%{background-position:0% 0%}
+}
+.btn:hover{box-shadow:0 0 0 8px rgba(232,176,75,.16)}
+.btn:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.cta-row{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  align-items:center;
+  gap:16px;
+}
+.btn-back{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:16px 30px;min-height:52px;border-radius:999px;
+  font-weight:600;font-size:15.5px;text-decoration:none;
+  border:1px solid rgba(58,14,28,.28);
+  color:var(--plum);
+  transition:border-color 220ms var(--ease), box-shadow 220ms var(--ease);
+}
+.btn-back:hover{border-color:var(--amber);box-shadow:0 0 0 8px rgba(201,145,91,.12)}
+.btn-back:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+
+footer{background:var(--plum);padding:36px 24px;text-align:center}
+.footer-links{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;font-size:13.5px}
+.footer-links a{color:rgba(247,232,212,.75);text-decoration:none;display:inline-block;padding:8px 4px;transition:color 200ms ease}
+.footer-links a:hover{color:var(--amber)}
+.footer-links span{color:rgba(247,232,212,.35)}
+
+@media (max-width:600px){
+  main{padding:40px 18px 64px}
+  .month{padding:26px 20px;border-radius:16px}
+  .threads{padding:28px 20px}
+  .page-head{padding:48px 20px 44px}
+  .practice-list li,.lecture-list li,.threads li{font-size:16px}
+  .month-desc{font-size:16px}
+  .principle p{font-size:15.5px}
+}
+
+@media (prefers-reduced-motion: reduce){
+  *{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;scroll-behavior:auto !important}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a class="brand" href="../index.html">Вік Королеви</a>
+  <a class="back" href="../index.html">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    На головну
+  </a>
+</div>
+
+<header class="page-head">
+  <span class="eyebrow">Онлайн-клуб кундаліні йоги</span>
+  <h1>Програма практик</h1>
+  <p>Підтримка тіла й психіки для жінок 40+ у період гормональних змін. Дванадцять місяців — дванадцять реальних запитів, з якими ми працюємо м'яко, послідовно й комплексно.</p>
+</header>
+
+<main>
+
+  <h2 class="block-title">Як побудована програма</h2>
+  <p class="block-lead">Ця програма — не набір випадкових тем, а цілісна система підтримки.</p>
+
+  <div class="principles">
+    <div class="principle">
+      <span class="num">1</span>
+      <h3>Через реальні запити</h3>
+      <p>Кожен місяць — конкретне відчуття, знайоме жінці 40+, а не красива фраза.</p>
+    </div>
+    <div class="principle">
+      <span class="num">2</span>
+      <h3>Ранкова активація</h3>
+      <p>Практики пробуджують, тонізують і наповнюють енергією цілий день.</p>
+    </div>
+    <div class="principle">
+      <span class="num">3</span>
+      <h3>Завжди комплексний підхід</h3>
+      <p>Навіть з фокусом на одну тему ми пропрацьовуємо гормональну і нервову систему в цілому.</p>
+    </div>
+    <div class="principle">
+      <span class="num">4</span>
+      <h3>Можна долучитися будь-коли</h3>
+      <p>Кожне заняття самодостатнє. Нова учасниця входить у будь-який тиждень без відчуття, що спізнилась.</p>
+    </div>
+  </div>
+
+  <div class="rule"></div>
+
+  <!-- ===== МІСЯЦЬ 1 ===== -->
+  <article class="month">
+    <span class="month-label">Місяць 1 · Серпень</span>
+    <p class="month-quote">«Втомлена постійно — і відпочинок не рятує»</p>
+    <p class="month-desc">Хронічна втома, низький рівень енергії, знесилення, яке не минає навіть після відпочинку.</p>
+
+    <span class="sub-label">Чотири практики</span>
+    <ol class="practice-list">
+      <li>Активуюча крія на пупковий центр — джерело вітальності</li>
+      <li>Крія для наднирників — коли «батарейка сіла» від тривалого стресу</li>
+      <li>Крія на кровообіг і тонус тіла — фізичне пробудження</li>
+      <li>Surya Kriya — сонячна енергія на день</li>
+    </ol>
+
+    <span class="sub-label">Лекції місяця</span>
+    <ul class="lecture-list">
+      <li>Чому в цьому віці енергія падає — і що реально допомагає</li>
+      <li>Як практика повертає ресурс</li>
+    </ul>
+
+    <p class="complex-note"><strong>Комплексно:</strong> активація ендокринної системи + тонус + запуск нервової системи в ранковий ритм.</p>
+  </article>
+
+  <!-- ===== МІСЯЦЬ 2 ===== -->
+  <article class="month">
+    <span class="month-label">Місяць 2 · Вересень</span>
+    <p class="month-quote">«Живу в постійній напрузі й не можу просто видихнути»</p>
+    <p class="month-desc">Постійна внутрішня напруга, неможливість розслабитися, життя «на нервах».</p>
+
+    <span class="sub-label">Чотири практики</span>
+    <ol class="practice-list">
+      <li>Крія на баланс нервової системи — знімає фонову напругу</li>
+      <li>Крія на стійкість до стресу — робота з реакцією на подразники</li>
+      <li>Крія на серцевий центр — відпустити стиснення в грудях</li>
+      <li>Динамічна крія на скидання напруги через рух</li>
+    </ol>
+
+    <span class="sub-label">Лекції місяця</span>
+    <ul class="lecture-list">
+      <li>Чому стрес у цьому віці б'є сильніше — кортизол і гормони</li>
+      <li>Розслаблення без відключки: як відпустити, залишаючись у житті</li>
+    </ul>
+
+    <p class="complex-note"><strong>Комплексно:</strong> нервова система (фокус) + зниження кортизолу + гнучкість плечей і шиї, де копиться стрес.</p>
+  </article>
+
+  <!-- ===== МІСЯЦЬ 3 ===== -->
+  <article class="month">
+    <span class="month-label">Місяць 3 · Жовтень</span>
+    <p class="month-quote">«Зриваюсь на рідних через дрібниці, а потім картаю себе»</p>
+    <p class="month-desc">Дратівливість, спалахи, емоційна нестриманість, провина після.</p>
+
+    <span class="sub-label">Чотири практики</span>
+    <ol class="practice-list">
+      <li>Крія на емоційний баланс</li>
+      <li>Крія на вивільнення роздратування через рух — безпечний вихід емоції</li>
+      <li>Крія на серцевий центр — від жорсткості до м'якості</li>
+      <li>Крія на нервову систему — «довший запал» перед реакцією</li>
+    </ol>
+
+    <span class="sub-label">Лекції місяця</span>
+    <ul class="lecture-list">
+      <li>Дратівливість — не мій поганий характер, а гормони: як з цим бути</li>
+      <li><span class="expert-tag">Експерт · Нутриціолог</span>Харчування, яке впливає на настрій і рівень енергії</li>
+    </ul>
+
+    <p class="complex-note"><strong>Комплексно:</strong> нервова система + гормональні коливання (природа дратівливості) + гнучкість хребта як вихід напруги.</p>
+  </article>
+
+  <!-- ===== МІСЯЦЬ 4 ===== -->
+  <article class="month">
+    <span class="month-label">Місяць 4 · Листопад</span>
+    <p class="month-quote">«Нічого не радує, ніби фарби згасли»</p>
+    <p class="month-desc">Знижений настрій, апатія, втрата смаку до життя в осінній сезон.</p>
+
+    <span class="sub-label">Чотири практики</span>
+    <ol class="practice-list">
+      <li>Крія на піднесення духу</li>
+      <li>Крія на серцевий центр — повернути тепло й радість</li>
+      <li>Активуюча крія проти сезонного спаду</li>
+      <li>Крія на легені й дихання — «більше повітря = більше життя»</li>
+    </ol>
+
+    <span class="sub-label">Лекції місяця</span>
+    <ul class="lecture-list">
+      <li>Осіння хандра чи щось більше: як підтримати себе й коли до лікаря</li>
+      <li>Маленькі джерела радості: щоденні опори настрою</li>
+    </ul>
+
+    <p class="complex-note"><strong>Комплексно:</strong> нервова система + ендокринний вплив на настрій + розкриття грудної клітки (постава й дихання).</p>
+  </article>
+
+  <!-- ===== МІСЯЦЬ 5 ===== -->
+  <article class="month">
+    <span class="month-label">Місяць 5 · Грудень</span>
+    <p class="month-quote">«Підвести підсумки й увійти в новий рік з енергією»</p>
+    <p class="month-desc">Підняти рівень енергії, з ясною головою озирнутися на рік — що взяти, що відпустити — і спокійно спланувати наступний.</p>
+
+    <span class="sub-label">Чотири практики</span>
+    <ol class="practice-list">
+      <li>Активуюча крія на підняття рівня енергії — ресурс для рефлексії й планування</li>
+      <li>Крія на ясність розуму — чесно побачити рік і розставити пріоритети</li>
+      <li>Крія на серцевий центр — вдячність собі за пройдений шлях</li>
+      <li>Крія для гіпофізу і посилення інтуїції</li>
+    </ol>
+
+    <span class="sub-label">Лекції місяця</span>
+    <ul class="lecture-list">
+      <li>Підсумки року без самокритики: що взяти, що відпустити</li>
+      <li>Планування нового року з опорою на себе, а не на тиск</li>
+    </ul>
+
+    <p class="complex-note"><strong>Комплексно:</strong> активація енергії + нервова система (ясність без перезбудження) + гнучкість.</p>
+  </article>
+
+  <!-- ===== МІСЯЦЬ 6 ===== -->
+  <article class="month">
+    <span class="month-label">Місяць 6 · Січень</span>
+    <p class="month-quote">«Свята позаду — хочу повернути легкість у тілі»</p>
+    <p class="month-desc">Детокс після святкового переїдання, легкість, очищення, перезапуск тіла на новий рік.</p>
+
+    <span class="sub-label">Чотири практики</span>
+    <ol class="practice-list">
+      <li>Крія на роботу печінки й травлення — очищення після свят</li>
+      <li>Крія на лімфу й виведення застою — легкість тіла</li>
+      <li>Динамічна крія на обмін і пробудження травної системи</li>
+      <li>Крія на пупковий центр + намір на новий рік (легкість + старт)</li>
+    </ol>
+
+    <span class="sub-label">Лекції місяця</span>
+    <ul class="lecture-list">
+      <li>М'який детокс після свят: без крайнощів і голодування</li>
+      <li>Легкий старт року: як повернути тілу легкість без насильства над собою</li>
+    </ul>
+
+    <p class="complex-note"><strong>Комплексно:</strong> травна/ендокринна система (фокус) + нервова система (перезапуск ритму) + гнучкість і рух застою.</p>
+  </article>
+
+  <!-- ===== МІСЯЦЬ 7 ===== -->
+  <article class="month">
+    <span class="month-label">Місяць 7 · Лютий</span>
+    <p class="month-quote">«Не сплю ночами, а вдень — туман у голові й забуваю слова»</p>
+    <p class="month-desc">Безсоння та його наслідки — мозковий туман, забудькуватість, розсіяність, ранкова розбитість. Причина й наслідок в одному ланцюгу.</p>
+
+    <span class="sub-label">Чотири практики</span>
+    <ol class="practice-list">
+      <li>Ранкова активуюча крія, що вирівнює циркадний ритм — кращий сон уночі через бадьорий ранок</li>
+      <li>Крія на ясність розуму й концентрацію — розігнати туман</li>
+      <li>Крія на нервову систему — зняти денне перезбудження, що заважає спати</li>
+      <li>Крія на приплив крові до голови (пам'ять, фокус) + баланс ритму</li>
+    </ol>
+
+    <span class="sub-label">Лекції місяця</span>
+    <ul class="lecture-list">
+      <li>Сон і ясність голови: чому вони ламаються разом і що допомагає</li>
+      <li>Вечірні ритуали й гігієна сну (+ аптечка технік для засинання)</li>
+    </ul>
+
+    <p class="complex-note"><strong>Комплексно:</strong> нервова система + гормональний вплив на сон (прогестерон) + кровообіг до мозку.</p>
+  </article>
+
+  <!-- ===== МІСЯЦЬ 8 ===== -->
+  <article class="month">
+    <span class="month-label">Місяць 8 · Березень</span>
+    <p class="month-quote">«Їм як завжди, вага росте»</p>
+    <p class="month-desc">Набір ваги, особливо живіт, попри незмінне харчування.</p>
+
+    <span class="sub-label">Чотири практики</span>
+    <ol class="practice-list">
+      <li>Крія на пупковий центр і обмін — активація метаболізму</li>
+      <li>Крія на роботу печінки й травлення — весняне очищення</li>
+      <li>Динамічна крія на тонус м'язів (м'язи = метаболізм)</li>
+      <li>Крія на лімфу й рух застояної енергії</li>
+    </ol>
+
+    <span class="sub-label">Лекції місяця</span>
+    <ul class="lecture-list">
+      <li><span class="expert-tag">Експерт · Нутриціолог</span>Чому змінюється вага 40+ і як харчуватися по-новому</li>
+      <li>Вага й тіло: від боротьби з собою до турботи</li>
+    </ul>
+
+    <p class="complex-note"><strong>Комплексно:</strong> ендокринна/метаболічна (фокус) + нервова система (стрес і вага пов'язані) + гнучкість і рух.</p>
+  </article>
+
+  <!-- ===== МІСЯЦЬ 9 ===== -->
+  <article class="month">
+    <span class="month-label">Місяць 9 · Квітень</span>
+    <p class="month-quote">«Раптовий жар накриває — і я не знаю, куди дітися»</p>
+    <p class="month-desc">Приливи й нічна пітливість, раптовість, дискомфорт і сором на людях.</p>
+
+    <span class="sub-label">Чотири практики</span>
+    <ol class="practice-list">
+      <li>Крія на баланс + Sitali — охолоджувальне дихання від приливу</li>
+      <li>Крія на нервову систему — стрес підсилює приливи</li>
+      <li>Крія на ендокринний баланс через зниження напруги</li>
+      <li>Крія на стабільність і заземлення</li>
+    </ol>
+
+    <span class="sub-label">Лекції місяця</span>
+    <ul class="lecture-list">
+      <li>Приливи: чому виникають і що реально полегшує</li>
+      <li>Навички самодопомоги при приливі: дихання, які працюють у моменті</li>
+    </ul>
+
+    <p class="complex-note"><strong>Комплексно:</strong> нервова система + вплив на вазомоторні симптоми + гнучкість. Sitali — навичка «на кишеню» для будь-якого моменту.</p>
+  </article>
+
+  <!-- ===== МІСЯЦЬ 10 ===== -->
+  <article class="month">
+    <span class="month-label">Місяць 10 · Травень</span>
+    <p class="month-quote">«Близькість більше не радує, а бажання зникло»</p>
+    <p class="month-desc">Зниження лібідо, сухість, дискомфорт, відчуття втрати жіночності.</p>
+
+    <span class="sub-label">Чотири практики</span>
+    <ol class="practice-list">
+      <li>Крія для сексуального магнетизму — жіноча енергія, сексуальність</li>
+      <li>Крія для тазового дна й жіночого здоров'я</li>
+      <li>Крія на прийняття тіла й чуттєвість</li>
+      <li>Крія на життєву силу й радість руху</li>
+    </ol>
+
+    <span class="sub-label">Лекції місяця</span>
+    <ul class="lecture-list">
+      <li>Лібідо й сексуальність у цей період: без сорому, чесно</li>
+      <li>Жіночність, яка не залежить від віку</li>
+    </ul>
+
+    <p class="complex-note"><strong>Комплексно:</strong> тазове дно й кровообіг у малому тазу + нервова система (розслаблення й довіра тілу) + гнучкість стегон.</p>
+  </article>
+
+  <!-- ===== МІСЯЦЬ 11 ===== -->
+  <article class="month">
+    <span class="month-label">Місяць 11 · Червень</span>
+    <p class="month-quote">«Набрякаю й важчаю — одутле обличчя зранку, важкі ноги»</p>
+    <p class="month-desc">Набряки, застій лімфи, важкість у ногах, одутлість обличчя, тьмяна шкіра — усе від застою лімфотоку й кровообігу.</p>
+
+    <span class="sub-label">Чотири практики</span>
+    <ol class="practice-list">
+      <li>Крія на лімфодренаж і рух лімфи — виведення застою, легкість</li>
+      <li>Крія на кровообіг і сяйво обличчя — проти одутлості, тьмяності</li>
+      <li>Динамічна крія на ноги й малий таз — важкість, набряки ніг</li>
+      <li>Активуюча крія на загальну вітальність + прийняття себе</li>
+    </ol>
+
+    <span class="sub-label">Лекції місяця</span>
+    <ul class="lecture-list">
+      <li>Набряки й застій лімфи 40+: чому виникають і як рух допомагає</li>
+      <li>Сяйво зсередини: лімфа, кровообіг і жива шкіра</li>
+    </ul>
+
+    <p class="complex-note"><strong>Комплексно:</strong> лімфа й кровообіг (фокус) + ендокринна активація + нервова система (стрес і затримка рідини пов'язані) + гнучкість.</p>
+  </article>
+
+  <!-- ===== МІСЯЦЬ 12 ===== -->
+  <article class="month">
+    <span class="month-label">Місяць 12 · Липень</span>
+    <p class="month-quote">«Зранку тіло як дерев'яне — важко розходитись»</p>
+    <p class="month-desc">Ранкова скутість, ниючий біль у суглобах і спині, «дерев'яне» тіло, важко розходитись зранку.</p>
+
+    <span class="sub-label">Чотири практики</span>
+    <ol class="practice-list">
+      <li>М'яка крія на суглоби й мобілізацію — розігнати ранкову скутість</li>
+      <li>Крія на хребет — гнучкість і опора (спина, поперек)</li>
+      <li>Крія з м'яким навантаженням і балансом — підтримка тіла, стабільність</li>
+      <li>Крія спінальних енергій</li>
+    </ol>
+
+    <span class="sub-label">Лекції місяця</span>
+    <ul class="lecture-list">
+      <li>Скутість і біль у тілі 40+: як рух зранку повертає легкість</li>
+      <li>Як практики впливають на опорно-руховий апарат, міцність кісток і рухливість суглобів</li>
+    </ul>
+
+    <p class="complex-note"><strong>Комплексно:</strong> гнучкість і опорно-руховий апарат (фокус) + ендокринна підтримка + нервова система. Обережно: м'яко, без різких рухів, з урахуванням суглобів.</p>
+  </article>
+
+  <div class="rule"></div>
+
+  <div class="page-cta">
+    <p>Готова почати з найближчої практики?</p>
+    <div class="cta-row">
+      <a class="btn" href="https://kundalini-yoga.kwiga.com/o/DJuOdxnQ6F5n/payment" target="_blank" rel="noopener noreferrer">Приєднатись до клубу — 1000 грн/міс</a>
+      <a class="btn-back" href="../index.html">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Повернутись на головну
+      </a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="footer-links">
+    <a href="../index.html">На головну</a><span>·</span>
+    <a href="../oferta/index.html">Публічна оферта</a><span>·</span>
+    <a href="../privacy/index.html">Політика конфіденційності</a>
+  </div>
+</footer>
+
+</body>
+</html>
